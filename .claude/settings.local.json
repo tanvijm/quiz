@@ -4,7 +4,8 @@
       "Bash(npx create-next-app:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "WebFetch(domain:factors.ai)"
+      "WebFetch(domain:factors.ai)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
