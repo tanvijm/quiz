@@ -102,7 +102,7 @@ export default function ResultsPage() {
               Thank You!
             </h3>
             <p className="text-gray-600 mb-6">
-              Your SWAG request has been submitted successfully. You'll receive an email with shipping details within 2-3 business days.
+              Your SWAG request has been submitted successfully. You&apos;ll receive an email with shipping details within 2-3 business days.
             </p>
             <p className="text-sm text-gray-500">
               Want to learn more about incident management? Check out <a href="https://incident.io" className="text-incident-500 hover:text-incident-600">incident.io</a>
