@@ -1,13 +1,13 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import LeadForm, { LeadData } from '@/components/LeadForm'
 import { questions } from '@/lib/questions'
 import { calculateScore, getScoreMessage, getScoreColor } from '@/lib/scoring'
 import { QuizResult } from '@/types/quiz'
 
-export default function ResultsPage() {
+function ResultsContent() {
   const searchParams = useSearchParams()
   const [result, setResult] = useState<QuizResult | null>(null)
   const [showLeadForm, setShowLeadForm] = useState(false)
@@ -120,5 +120,21 @@ export default function ResultsPage() {
         </div>
       </div>
     </main>
+  )
+}
+
+export default function ResultsPage() {
+  return (
+    <Suspense fallback={
+      <main className="container mx-auto px-4 py-8">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <p className="text-lg text-gray-600">Loading results...</p>
+          </div>
+        </div>
+      </main>
+    }>
+      <ResultsContent />
+    </Suspense>
   )
 }
