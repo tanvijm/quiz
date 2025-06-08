@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx create-next-app:*)",
       "Bash(git push:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:factors.ai)"
     ],
     "deny": []
   }

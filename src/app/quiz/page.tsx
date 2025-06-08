@@ -53,34 +53,36 @@ export default function QuizPage() {
   const isAnswered = quizState.answers[quizState.currentQuestion] !== undefined
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <QuestionCard
-          question={currentQuestion.question}
-          options={currentQuestion.options}
-          selectedAnswer={quizState.answers[quizState.currentQuestion] ?? null}
-          onAnswerSelect={handleAnswerSelect}
-          questionNumber={quizState.currentQuestion + 1}
-          totalQuestions={questions.length}
-        />
-      </div>
+    <main className="min-h-screen py-8 px-4">
+      <div className="container mx-auto">
+        <div className="mb-8">
+          <QuestionCard
+            question={currentQuestion.question}
+            options={currentQuestion.options}
+            selectedAnswer={quizState.answers[quizState.currentQuestion] ?? null}
+            onAnswerSelect={handleAnswerSelect}
+            questionNumber={quizState.currentQuestion + 1}
+            totalQuestions={questions.length}
+          />
+        </div>
 
-      <div className="flex justify-between max-w-2xl mx-auto">
-        <button
-          onClick={handlePrevious}
-          disabled={quizState.currentQuestion === 0}
-          className="px-6 py-2 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Previous
-        </button>
-        
-        <button
-          onClick={handleNext}
-          disabled={!isAnswered}
-          className="px-6 py-2 bg-incident-500 text-white rounded-lg font-medium hover:bg-incident-600 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {quizState.currentQuestion === questions.length - 1 ? 'Finish Quiz' : 'Next'}
-        </button>
+        <div className="flex justify-between max-w-3xl mx-auto px-8">
+          <button
+            onClick={handlePrevious}
+            disabled={quizState.currentQuestion === 0}
+            className="btn-secondary disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          >
+            ← Previous
+          </button>
+          
+          <button
+            onClick={handleNext}
+            disabled={!isAnswered}
+            className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+          >
+            {quizState.currentQuestion === questions.length - 1 ? 'Finish Quiz →' : 'Next →'}
+          </button>
+        </div>
       </div>
     </main>
   )

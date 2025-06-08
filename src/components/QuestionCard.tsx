@@ -17,42 +17,61 @@ export default function QuestionCard({
   questionNumber,
   totalQuestions
 }: QuestionCardProps) {
+  const progressPercentage = (questionNumber / totalQuestions) * 100
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-sm font-medium text-gray-500">
-            Question {questionNumber} of {totalQuestions}
-          </span>
-          <div className="w-32 bg-gray-200 rounded-full h-2">
+    <div className="max-w-3xl mx-auto animate-slide-up">
+      <div className="card p-8 md:p-10">
+        <div className="mb-8">
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex items-center space-x-3">
+              <span className="text-sm font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
+                Question {questionNumber} of {totalQuestions}
+              </span>
+              <span className="text-sm text-gray-500">
+                {Math.round(progressPercentage)}% Complete
+              </span>
+            </div>
+          </div>
+          
+          <div className="w-full bg-gray-100 rounded-full h-2 mb-8">
             <div 
-              className="bg-incident-500 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${(questionNumber / totalQuestions) * 100}%` }}
+              className="bg-gradient-primary h-2 rounded-full transition-all duration-500 ease-out"
+              style={{ width: `${progressPercentage}%` }}
             ></div>
           </div>
+          
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 leading-tight">
+            {question}
+          </h2>
         </div>
-        <h2 className="text-xl font-semibold text-gray-900 mb-6">
-          {question}
-        </h2>
-      </div>
-      
-      <div className="space-y-3">
-        {options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => onAnswerSelect(index)}
-            className={`w-full text-left p-4 rounded-lg border-2 transition-all duration-200 ${
-              selectedAnswer === index
-                ? 'border-incident-500 bg-incident-50 text-incident-700'
-                : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-            }`}
-          >
-            <span className="font-medium mr-3">
-              {String.fromCharCode(65 + index)}.
-            </span>
-            {option}
-          </button>
-        ))}
+        
+        <div className="space-y-4">
+          {options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => onAnswerSelect(index)}
+              className={`group w-full text-left p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-md ${
+                selectedAnswer === index
+                  ? 'border-primary-500 bg-gradient-secondary shadow-lg transform scale-[1.02]'
+                  : 'border-gray-200 hover:border-primary-300 hover:bg-primary-50'
+              }`}
+            >
+              <div className="flex items-start space-x-4">
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-semibold text-sm transition-colors ${
+                  selectedAnswer === index
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-gray-100 text-gray-600 group-hover:bg-primary-100 group-hover:text-primary-600'
+                }`}>
+                  {String.fromCharCode(65 + index)}
+                </div>
+                <span className="text-gray-900 text-lg leading-relaxed">
+                  {option}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )
