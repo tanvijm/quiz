@@ -93,12 +93,12 @@ export default function HubSpotForm({ onSubmit }: HubSpotFormProps) {
             .hbspt-form select:focus,
             .hbspt-form textarea:focus {
               outline: none !important;
-              border-color: #4d65ff !important;
-              box-shadow: 0 0 0 3px rgba(77, 101, 255, 0.1) !important;
+              border-color: #f64520 !important;
+              box-shadow: 0 0 0 3px rgba(246, 69, 32, 0.1) !important;
             }
             
             .hbspt-form .hs-button {
-              background: linear-gradient(135deg, #4d65ff 0%, #818cf8 100%) !important;
+              background: linear-gradient(135deg, #f64520 0%, #dc2626 100%) !important;
               color: white !important;
               border: none !important;
               padding: 1rem 2rem !important;
@@ -113,7 +113,7 @@ export default function HubSpotForm({ onSubmit }: HubSpotFormProps) {
             
             .hbspt-form .hs-button:hover {
               transform: scale(1.05) !important;
-              box-shadow: 0 10px 25px rgba(77, 101, 255, 0.3) !important;
+              box-shadow: 0 10px 25px rgba(246, 69, 32, 0.3) !important;
             }
             
             .hbspt-form .hs-error-msgs {
@@ -146,7 +146,7 @@ export default function HubSpotForm({ onSubmit }: HubSpotFormProps) {
               width: 1.25rem !important;
               height: 1.25rem !important;
               margin: 0 !important;
-              accent-color: #4d65ff !important;
+              accent-color: #f64520 !important;
             }
             
             .hbspt-form .hs-form-booleancheckbox label {

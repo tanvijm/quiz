@@ -8,20 +8,33 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'heading': ['Libre Franklin', 'system-ui', 'sans-serif'],
         'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         primary: {
-          50: '#f0f4ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#4d65ff',
-          600: '#4338ca',
-          700: '#3730a3',
-          800: '#312e81',
-          900: '#1e1b4b',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#f64520',
+          600: '#dc2626',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
+        },
+        navy: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#194d6f',
+          600: '#155a75',
+          700: '#0c4a6e',
+          800: '#075985',
+          900: '#0c4a6e',
         },
         gray: {
           50: '#fafafa',
@@ -44,8 +57,9 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #4d65ff 0%, #818cf8 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #f64520 0%, #dc2626 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #194d6f 0%, #0c4a6e 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #194d6f 0%, #0c4a6e 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

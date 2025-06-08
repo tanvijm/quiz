@@ -41,7 +41,7 @@ export default function QuestionCard({
             ></div>
           </div>
           
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 leading-tight">
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold text-gray-900 leading-tight">
             {question}
           </h2>
         </div>

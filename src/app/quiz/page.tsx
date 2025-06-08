@@ -53,7 +53,7 @@ export default function QuizPage() {
   const isAnswered = quizState.answers[quizState.currentQuestion] !== undefined
 
   return (
-    <main className="min-h-screen py-8 px-4">
+    <main className="min-h-screen py-8 px-4 bg-gray-50">
       <div className="container mx-auto">
         <div className="mb-8">
           <QuestionCard
